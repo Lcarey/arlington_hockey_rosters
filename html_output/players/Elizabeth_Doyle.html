@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elizabeth Doyle - Arlington Hockey Club</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+    
+    .header {
+        background-color: #1e3a8a;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .player-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .player-link {
+        background-color: #e0f2fe;
+        padding: 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #0277bd;
+        border: 1px solid #b3e5fc;
+        transition: background-color 0.2s;
+    }
+    
+    .player-link:hover {
+        background-color: #b3e5fc;
+    }
+    
+    .team-link {
+        background-color: #e8f5e8;
+        padding: 12px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #2e7d32;
+        border: 1px solid #c8e6c9;
+        transition: background-color 0.2s;
+        display: block;
+    }
+    
+    .team-link:hover {
+        background-color: #c8e6c9;
+    }
+    
+    .team-link .team-name {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 4px;
+    }
+    
+    .team-link .team-season {
+        font-size: 0.9em;
+        color: #4a4a4a;
+    }
+    
+    .section-header {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #1e3a8a;
+        margin: 30px 0 15px 0;
+    }
+    
+    .section-header h3 {
+        margin: 0;
+        color: #1e3a8a;
+    }
+    
+    .team-card {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    .team-header {
+        background-color: #17a2b8;
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .teammates {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 5px;
+        margin-top: 10px;
+    }
+    
+    .teammate {
+        background-color: #e9ecef;
+        padding: 5px 8px;
+        border-radius: 3px;
+        font-size: 0.9em;
+    }
+    
+    .back-link {
+        display: inline-block;
+        background-color: #6c757d;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    
+    .back-link:hover {
+        background-color: #5a6268;
+    }
+    
+    .stats {
+        background-color: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏒 Elizabeth Doyle</h1>
+        <h2>Player Profile</h2>
+    </div>
+    
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Player Directory</a>
+        
+        <div class="stats">
+            <strong>📊 Teams Played: 5 | Total Unique Teammates: 32</strong>
+        </div>
+        
+        <h3>Team History</h3>
+
+        <div class="team-card">
+            <div class="team-header">
+                <strong>Team #1: Mite AA (2)</strong>
+                <br>
+                <small>Season: 2025/2026 SEASON | Team ID: 114942</small>
+            </div>
+            <p><strong>Teammates (24):</strong></p>
+            <div class="teammates"><div class="teammate">Andrew Bellizia</div><div class="teammate">Andrew Bellizia</div><div class="teammate">Bastian Spaulding</div><div class="teammate">Bastian Spaulding</div><div class="teammate">Claire Keating</div><div class="teammate">Claire Keating</div><div class="teammate">Connor Stanton</div><div class="teammate">Connor Stanton</div><div class="teammate">Finn Cohen</div><div class="teammate">Finn Cohen</div><div class="teammate">Logan Chryssis</div><div class="teammate">Logan Chryssis</div><div class="teammate">Maeve Wenz</div><div class="teammate">Maeve Wenz</div><div class="teammate">Mason Flynn</div><div class="teammate">Mason Flynn</div><div class="teammate">Mia Rocchio</div><div class="teammate">Mia Rocchio</div><div class="teammate">Sanjay Viron</div><div class="teammate">Sanjay Viron</div><div class="teammate">Siena Paus</div><div class="teammate">Siena Paus</div><div class="teammate">Thomas Gallagher</div><div class="teammate">Thomas Gallagher</div></div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-header">
+                <strong>Team #2: U10 B</strong>
+                <br>
+                <small>Season: 2025/2026 SEASON | Team ID: 114962</small>
+            </div>
+            <p><strong>Teammates (24):</strong></p>
+            <div class="teammates"><div class="teammate">Bailey Kerr</div><div class="teammate">Bailey Kerr</div><div class="teammate">Caroline Simmons</div><div class="teammate">Caroline Simmons</div><div class="teammate">Claire Keating</div><div class="teammate">Claire Keating</div><div class="teammate">Eleanor Callow</div><div class="teammate">Eleanor Callow</div><div class="teammate">Hazel Haines</div><div class="teammate">Hazel Haines</div><div class="teammate">Katerina Rothemeyer</div><div class="teammate">Katerina Rothemeyer</div><div class="teammate">Lyra Lickorish</div><div class="teammate">Lyra Lickorish</div><div class="teammate">Maeve Wenz</div><div class="teammate">Maeve Wenz</div><div class="teammate">Payton Corsino</div><div class="teammate">Payton Corsino</div><div class="teammate">Shay Stewart</div><div class="teammate">Shay Stewart</div><div class="teammate">Simone McBride</div><div class="teammate">Simone McBride</div><div class="teammate">Sylvia Melendez</div><div class="teammate">Sylvia Melendez</div></div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-header">
+                <strong>Team #3: Mite AA (2)</strong>
+                <br>
+                <small>Season: 2025/2026 SEASON | Team ID: 114942</small>
+            </div>
+            <p><strong>Teammates (24):</strong></p>
+            <div class="teammates"><div class="teammate">Andrew Bellizia</div><div class="teammate">Andrew Bellizia</div><div class="teammate">Bastian Spaulding</div><div class="teammate">Bastian Spaulding</div><div class="teammate">Claire Keating</div><div class="teammate">Claire Keating</div><div class="teammate">Connor Stanton</div><div class="teammate">Connor Stanton</div><div class="teammate">Finn Cohen</div><div class="teammate">Finn Cohen</div><div class="teammate">Logan Chryssis</div><div class="teammate">Logan Chryssis</div><div class="teammate">Maeve Wenz</div><div class="teammate">Maeve Wenz</div><div class="teammate">Mason Flynn</div><div class="teammate">Mason Flynn</div><div class="teammate">Mia Rocchio</div><div class="teammate">Mia Rocchio</div><div class="teammate">Sanjay Viron</div><div class="teammate">Sanjay Viron</div><div class="teammate">Siena Paus</div><div class="teammate">Siena Paus</div><div class="teammate">Thomas Gallagher</div><div class="teammate">Thomas Gallagher</div></div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-header">
+                <strong>Team #4: U10 B</strong>
+                <br>
+                <small>Season: 2025/2026 SEASON | Team ID: 114962</small>
+            </div>
+            <p><strong>Teammates (24):</strong></p>
+            <div class="teammates"><div class="teammate">Bailey Kerr</div><div class="teammate">Bailey Kerr</div><div class="teammate">Caroline Simmons</div><div class="teammate">Caroline Simmons</div><div class="teammate">Claire Keating</div><div class="teammate">Claire Keating</div><div class="teammate">Eleanor Callow</div><div class="teammate">Eleanor Callow</div><div class="teammate">Hazel Haines</div><div class="teammate">Hazel Haines</div><div class="teammate">Katerina Rothemeyer</div><div class="teammate">Katerina Rothemeyer</div><div class="teammate">Lyra Lickorish</div><div class="teammate">Lyra Lickorish</div><div class="teammate">Maeve Wenz</div><div class="teammate">Maeve Wenz</div><div class="teammate">Payton Corsino</div><div class="teammate">Payton Corsino</div><div class="teammate">Shay Stewart</div><div class="teammate">Shay Stewart</div><div class="teammate">Simone McBride</div><div class="teammate">Simone McBride</div><div class="teammate">Sylvia Melendez</div><div class="teammate">Sylvia Melendez</div></div>
+        </div>
+
+        <div class="team-card">
+            <div class="team-header">
+                <strong>Team #5: Lightning</strong>
+                <br>
+                <small>Season: 23/24 Season | Team ID: 19120</small>
+            </div>
+            <p><strong>Teammates (10):</strong></p>
+            <div class="teammates"><div class="teammate">David Bennett</div><div class="teammate">Gabriel Clouqueur</div><div class="teammate">Gregory Moscatel</div><div class="teammate">Jacob Goodrich-Byers</div><div class="teammate">Joey Swift</div><div class="teammate">Manu Carey</div><div class="teammate">Matthew Snyder</div><div class="teammate">Ryan Keveny</div><div class="teammate">Saki Saito</div><div class="teammate">Sosuke Saito</div></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlington Hockey Club - Player Directory</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+    
+    .header {
+        background-color: #1e3a8a;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .player-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .player-link {
+        background-color: #e0f2fe;
+        padding: 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #0277bd;
+        border: 1px solid #b3e5fc;
+        transition: background-color 0.2s;
+    }
+    
+    .player-link:hover {
+        background-color: #b3e5fc;
+    }
+    
+    .team-link {
+        background-color: #e8f5e8;
+        padding: 12px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #2e7d32;
+        border: 1px solid #c8e6c9;
+        transition: background-color 0.2s;
+        display: block;
+    }
+    
+    .team-link:hover {
+        background-color: #c8e6c9;
+    }
+    
+    .team-link .team-name {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 4px;
+    }
+    
+    .team-link .team-season {
+        font-size: 0.9em;
+        color: #4a4a4a;
+    }
+    
+    .section-header {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #1e3a8a;
+        margin: 30px 0 15px 0;
+    }
+    
+    .section-header h3 {
+        margin: 0;
+        color: #1e3a8a;
+    }
+    
+    .team-card {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    .team-header {
+        background-color: #17a2b8;
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .teammates {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 5px;
+        margin-top: 10px;
+    }
+    
+    .teammate {
+        background-color: #e9ecef;
+        padding: 5px 8px;
+        border-radius: 3px;
+        font-size: 0.9em;
+    }
+    
+    .back-link {
+        display: inline-block;
+        background-color: #6c757d;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    
+    .back-link:hover {
+        background-color: #5a6268;
+    }
+    
+    .stats {
+        background-color: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏒 Arlington Hockey Club</h1>
+        <h2>Player & Team Directory</h2>
+    </div>
+    
+    <div class="container">
+        <div class="stats">
+            <strong>📊 Total Players: 309 | Total Teams: 30</strong>
+        </div>
+        
+        <div class="section-header">
+            <h3>👥 Players</h3>
+        </div>
+        <p>Click on any player name to see their team history and teammates:</p>
+        
+        <div class="player-grid">
+            <a href="players/Abigail_De_Lisi.html" class="player-link">Abigail De Lisi</a>
+            <a href="players/Abigail_Prior.html" class="player-link">Abigail Prior</a>
+            <a href="players/Adam_Roussel.html" class="player-link">Adam Roussel</a>
+            <a href="players/Ainslie_Collins.html" class="player-link">Ainslie Collins</a>
+            <a href="players/Alex_4.html" class="player-link">Alex 4</a>
+            <a href="players/Alexander_12.html" class="player-link">Alexander 12</a>
+            <a href="players/Alexander_56.html" class="player-link">Alexander 56</a>
+            <a href="players/Alexander_Burke.html" class="player-link">Alexander Burke</a>
+            <a href="players/Alexander_Hurley.html" class="player-link">Alexander Hurley</a>
+            <a href="players/Alexander_Jacildo.html" class="player-link">Alexander Jacildo</a>
+            <a href="players/Alexander_Kenney.html" class="player-link">Alexander Kenney</a>
+            <a href="players/Alexander_Nicholls.html" class="player-link">Alexander Nicholls</a>
+            <a href="players/Alexandra_31.html" class="player-link">Alexandra 31</a>
+            <a href="players/Alexandra_Chu.html" class="player-link">Alexandra Chu</a>
+            <a href="players/Alexandra_Lipp.html" class="player-link">Alexandra Lipp</a>
+            <a href="players/Alexis_Chaulet.html" class="player-link">Alexis Chaulet</a>
+            <a href="players/Alice_Cope.html" class="player-link">Alice Cope</a>
+            <a href="players/Allyson_Siegel.html" class="player-link">Allyson Siegel</a>
+            <a href="players/Ambroise_Abele.html" class="player-link">Ambroise Abele</a>
+            <a href="players/Amelia_Eng.html" class="player-link">Amelia Eng</a>
+            <a href="players/Anderson_Dimitri.html" class="player-link">Anderson Dimitri</a>
+            <a href="players/Andrew_Bellizia.html" class="player-link">Andrew Bellizia</a>
+            <a href="players/Andrew_Malone.html" class="player-link">Andrew Malone</a>
+            <a href="players/Anna_Bartone.html" class="player-link">Anna Bartone</a>
+            <a href="players/Annette_Lee.html" class="player-link">Annette Lee</a>
+            <a href="players/Anthony_Degnan.html" class="player-link">Anthony Degnan</a>
+            <a href="players/Asher_47.html" class="player-link">Asher 47</a>
+            <a href="players/Audrey_Cervantes.html" class="player-link">Audrey Cervantes</a>
+            <a href="players/Ava_16.html" class="player-link">Ava 16</a>
+            <a href="players/Ava_Amico.html" class="player-link">Ava Amico</a>
+            <a href="players/Ava_Lynch.html" class="player-link">Ava Lynch</a>
+            <a href="players/Ava_Theiss.html" class="player-link">Ava Theiss</a>
+            <a href="players/Avik_Mahat.html" class="player-link">Avik Mahat</a>
+            <a href="players/Bailey_DiCarlo.html" class="player-link">Bailey DiCarlo</a>
+            <a href="players/Bailey_Kerr.html" class="player-link">Bailey Kerr</a>
+            <a href="players/Bastian_Spaulding.html" class="player-link">Bastian Spaulding</a>
+            <a href="players/Beckett_Leighton.html" class="player-link">Beckett Leighton</a>
+            <a href="players/Bella_Leighton.html" class="player-link">Bella Leighton</a>
+            <a href="players/Benjamin_9.html" class="player-link">Benjamin 9</a>
+            <a href="players/Benjamin_Hurley.html" class="player-link">Benjamin Hurley</a>
+            <a href="players/Benjamin_Walters.html" class="player-link">Benjamin Walters</a>
+            <a href="players/Benji_37.html" class="player-link">Benji 37</a>
+            <a href="players/Benji_Sawyer.html" class="player-link">Benji Sawyer</a>
+            <a href="players/Bowden_Wight.html" class="player-link">Bowden Wight</a>
+            <a href="players/Brendan_Bradley.html" class="player-link">Brendan Bradley</a>
+            <a href="players/Brendan_Delongchamp.html" class="player-link">Brendan Delongchamp</a>
+            <a href="players/Brendan_Gormley.html" class="player-link">Brendan Gormley</a>
+            <a href="players/Brendan_Kerr.html" class="player-link">Brendan Kerr</a>
+            <a href="players/Brendan_Leahy.html" class="player-link">Brendan Leahy</a>
+            <a href="players/Brooklyn_Just.html" class="player-link">Brooklyn Just</a>
+            <a href="players/Brooklyn_Mucci.html" class="player-link">Brooklyn Mucci</a>
+            <a href="players/Brooks_8.html" class="player-link">Brooks 8</a>
+            <a href="players/Bryce_19.html" class="player-link">Bryce 19</a>
+            <a href="players/Bryce_Allen.html" class="player-link">Bryce Allen</a>
+            <a href="players/Caiden_Anderson.html" class="player-link">Caiden Anderson</a>
+            <a href="players/Calvin_.html" class="player-link">Calvin #</a>
+            <a href="players/Camden_72.html" class="player-link">Camden 72</a>
+            <a href="players/Carli_Hahn.html" class="player-link">Carli Hahn</a>
+            <a href="players/Caroline_26.html" class="player-link">Caroline 26</a>
+            <a href="players/Caroline_37.html" class="player-link">Caroline 37</a>
+            <a href="players/Caroline_Prior.html" class="player-link">Caroline Prior</a>
+            <a href="players/Caroline_Simmons.html" class="player-link">Caroline Simmons</a>
+            <a href="players/Caroline_Spencer.html" class="player-link">Caroline Spencer</a>
+            <a href="players/Catherine_8.html" class="player-link">Catherine 8</a>
+            <a href="players/Catherine_Zhang.html" class="player-link">Catherine Zhang</a>
+            <a href="players/Charles_Arnold.html" class="player-link">Charles Arnold</a>
+            <a href="players/Chase_Nadeau.html" class="player-link">Chase Nadeau</a>
+            <a href="players/Christian_Anzalone.html" class="player-link">Christian Anzalone</a>
+            <a href="players/Christian_Zhou.html" class="player-link">Christian Zhou</a>
+            <a href="players/Christopher_.html" class="player-link">Christopher #</a>
+            <a href="players/Christopher_Hodgdon.html" class="player-link">Christopher Hodgdon</a>
+            <a href="players/Claire_Keating.html" class="player-link">Claire Keating</a>
+            <a href="players/Claire_McBride.html" class="player-link">Claire McBride</a>
+            <a href="players/Colette_5.html" class="player-link">Colette 5</a>
+            <a href="players/Colette_Rigollet.html" class="player-link">Colette Rigollet</a>
+            <a href="players/Colin_10.html" class="player-link">Colin 10</a>
+            <a href="players/Colin_Wenz.html" class="player-link">Colin Wenz</a>
+            <a href="players/Colson_Thomas.html" class="player-link">Colson Thomas</a>
+            <a href="players/Connor_Perrotti.html" class="player-link">Connor Perrotti</a>
+            <a href="players/Connor_Stanton.html" class="player-link">Connor Stanton</a>
+            <a href="players/DECLAN_OMAHONY.html" class="player-link">DECLAN O&#x27;MAHONY</a>
+            <a href="players/Daniel_Hurley.html" class="player-link">Daniel Hurley</a>
+            <a href="players/Daniel_Segal.html" class="player-link">Daniel Segal</a>
+            <a href="players/Dante_31.html" class="player-link">Dante 31</a>
+            <a href="players/Dante_Marchesano.html" class="player-link">Dante Marchesano</a>
+            <a href="players/Darragh_54.html" class="player-link">Darragh 54</a>
+            <a href="players/David_Bennett.html" class="player-link">David Bennett</a>
+            <a href="players/Delia_Kerr.html" class="player-link">Delia Kerr</a>
+            <a href="players/Domitille_Moyrand.html" class="player-link">Domitille Moyrand</a>
+            <a href="players/Dorian_Mabel_Necochea.html" class="player-link">Dorian Mabel Necochea</a>
+            <a href="players/Dylan_25.html" class="player-link">Dylan 25</a>
+            <a href="players/Dylan_Chryssis.html" class="player-link">Dylan Chryssis</a>
+            <a href="players/Dylan_Lickorish.html" class="player-link">Dylan Lickorish</a>
+            <a href="players/Ela_99.html" class="player-link">Ela 99</a>
+            <a href="players/Ela_Cokol.html" class="player-link">Ela Cokol</a>
+            <a href="players/Eleanor_Callow.html" class="player-link">Eleanor Callow</a>
+            <a href="players/Elijah_37.html" class="player-link">Elijah 37</a>
+            <a href="players/Elijah_Horwitz.html" class="player-link">Elijah Horwitz</a>
+            <a href="players/Elizabeth_Doyle.html" class="player-link">Elizabeth Doyle</a>
+            <a href="players/Elizabeth_Zhang.html" class="player-link">Elizabeth Zhang</a>
+            <a href="players/Ella_Hartunian.html" class="player-link">Ella Hartunian</a>
+            <a href="players/Ella_Moscatel.html" class="player-link">Ella Moscatel</a>
+            <a href="players/Elliot_17.html" class="player-link">Elliot 17</a>
+            <a href="players/Emily_McMullen.html" class="player-link">Emily McMullen</a>
+            <a href="players/Emily_Partridge.html" class="player-link">Emily Partridge</a>
+            <a href="players/Emmeline_Melendez.html" class="player-link">Emmeline Melendez</a>
+            <a href="players/Erika_Nagano-Heffernan.html" class="player-link">Erika Nagano-Heffernan</a>
+            <a href="players/Ethan_29.html" class="player-link">Ethan 29</a>
+            <a href="players/Ethan_59.html" class="player-link">Ethan 59</a>
+            <a href="players/Ethan_Keveny.html" class="player-link">Ethan Keveny</a>
+            <a href="players/Ethan_Lin.html" class="player-link">Ethan Lin</a>
+            <a href="players/Ethan_Nguyen_Lima.html" class="player-link">Ethan Nguyen Lima</a>
+            <a href="players/Evan_LaValle.html" class="player-link">Evan LaValle</a>
+            <a href="players/Evan_Spencer.html" class="player-link">Evan Spencer</a>
+            <a href="players/Finley_Brother.html" class="player-link">Finley Brother</a>
+            <a href="players/Finn_Cohen.html" class="player-link">Finn Cohen</a>
+            <a href="players/Fionn_Glynn.html" class="player-link">Fionn Glynn</a>
+            <a href="players/Frey_Dishman.html" class="player-link">Frey Dishman</a>
+            <a href="players/Gabriel_Clouqueur.html" class="player-link">Gabriel Clouqueur</a>
+            <a href="players/Gabriel_Fink.html" class="player-link">Gabriel Fink</a>
+            <a href="players/George_Ahmad.html" class="player-link">George Ahmad</a>
+            <a href="players/Gracyn_Smith.html" class="player-link">Gracyn Smith</a>
+            <a href="players/Graeme_Harrington.html" class="player-link">Graeme Harrington</a>
+            <a href="players/Gregory_Moscatel.html" class="player-link">Gregory Moscatel</a>
+            <a href="players/Griffin_Davis.html" class="player-link">Griffin Davis</a>
+            <a href="players/Hailey_Libby.html" class="player-link">Hailey Libby</a>
+            <a href="players/Harper_Anderson.html" class="player-link">Harper Anderson</a>
+            <a href="players/Harrison_5.html" class="player-link">Harrison 5</a>
+            <a href="players/Hayden_Scannell.html" class="player-link">Hayden Scannell</a>
+            <a href="players/Hazel_Haines.html" class="player-link">Hazel Haines</a>
+            <a href="players/Ian_Ding.html" class="player-link">Ian Ding</a>
+            <a href="players/Ian_Dodge.html" class="player-link">Ian Dodge</a>
+            <a href="players/Isaac_Lin.html" class="player-link">Isaac Lin</a>
+            <a href="players/Isaac_Strong.html" class="player-link">Isaac Strong</a>
+            <a href="players/Isla_grillo.html" class="player-link">Isla grillo</a>
+            <a href="players/Jack_Philbrook.html" class="player-link">Jack Philbrook</a>
+            <a href="players/Jack_Spadafora.html" class="player-link">Jack Spadafora</a>
+            <a href="players/Jackson_Belois.html" class="player-link">Jackson Belois</a>
+            <a href="players/Jacob_Goodrich-Byers.html" class="player-link">Jacob Goodrich-Byers</a>
+            <a href="players/James_24.html" class="player-link">James 24</a>
+            <a href="players/James_9.html" class="player-link">James 9</a>
+            <a href="players/James_Shebanova.html" class="player-link">James Shebanova</a>
+            <a href="players/Jason_Williams.html" class="player-link">Jason Williams</a>
+            <a href="players/Joey_Robillard.html" class="player-link">Joey Robillard</a>
+            <a href="players/Joey_Swift.html" class="player-link">Joey Swift</a>
+            <a href="players/John_5.html" class="player-link">John 5</a>
+            <a href="players/John_Greable.html" class="player-link">John Greable</a>
+            <a href="players/Jonathan_Zhou.html" class="player-link">Jonathan Zhou</a>
+            <a href="players/Joseph_Bianco.html" class="player-link">Joseph Bianco</a>
+            <a href="players/Jude_Moriarty.html" class="player-link">Jude Moriarty</a>
+            <a href="players/Julia_McDermott.html" class="player-link">Julia McDermott</a>
+            <a href="players/Katerina_Rothemeyer.html" class="player-link">Katerina Rothemeyer</a>
+            <a href="players/Kathleen_Powers.html" class="player-link">Kathleen Powers</a>
+            <a href="players/Keegan_3.html" class="player-link">Keegan 3</a>
+            <a href="players/Kelley_Fox.html" class="player-link">Kelley Fox</a>
+            <a href="players/Kevin_Fernekees.html" class="player-link">Kevin Fernekees</a>
+            <a href="players/Kira_Pirio.html" class="player-link">Kira Pirio</a>
+            <a href="players/Knox_6.html" class="player-link">Knox 6</a>
+            <a href="players/Kodey_27.html" class="player-link">Kodey 27</a>
+            <a href="players/Kodey_McPherson.html" class="player-link">Kodey McPherson</a>
+            <a href="players/Kosta_Stratakias.html" class="player-link">Kosta Stratakias</a>
+            <a href="players/Krish_97.html" class="player-link">Krish 97</a>
+            <a href="players/Kyle_Davies.html" class="player-link">Kyle Davies</a>
+            <a href="players/Kyle_LaValle.html" class="player-link">Kyle LaValle</a>
+            <a href="players/Lachlan_Meany.html" class="player-link">Lachlan Meany</a>
+            <a href="players/Landon_Lee.html" class="player-link">Landon Lee</a>
+            <a href="players/Lenox_McBride.html" class="player-link">Lenox McBride</a>
+            <a href="players/Liam_34.html" class="player-link">Liam 34</a>
+            <a href="players/Liam_8.html" class="player-link">Liam 8</a>
+            <a href="players/Liam_Kennedy.html" class="player-link">Liam Kennedy</a>
+            <a href="players/Libby_Tagupa.html" class="player-link">Libby Tagupa</a>
+            <a href="players/Lizzie_Klos.html" class="player-link">Lizzie Klos</a>
+            <a href="players/Logan_48.html" class="player-link">Logan 48</a>
+            <a href="players/Logan_Chryssis.html" class="player-link">Logan Chryssis</a>
+            <a href="players/Loki_22.html" class="player-link">Loki 22</a>
+            <a href="players/Lorna_Murray.html" class="player-link">Lorna Murray</a>
+            <a href="players/Louis_Liu.html" class="player-link">Louis Liu</a>
+            <a href="players/Lucas_Bedard.html" class="player-link">Lucas Bedard</a>
+            <a href="players/Luciano_Goncalves.html" class="player-link">Luciano Goncalves</a>
+            <a href="players/Lucy_Mohan.html" class="player-link">Lucy Mohan</a>
+            <a href="players/Luke_26.html" class="player-link">Luke 26</a>
+            <a href="players/Luke_Cusanno.html" class="player-link">Luke Cusanno</a>
+            <a href="players/Luke_Senter.html" class="player-link">Luke Senter</a>
+            <a href="players/Luke_arnold.html" class="player-link">Luke arnold</a>
+            <a href="players/Lyla_21.html" class="player-link">Lyla 21</a>
+            <a href="players/Lyla_Del_Canto.html" class="player-link">Lyla Del Canto</a>
+            <a href="players/Lyndon_Chung.html" class="player-link">Lyndon Chung</a>
+            <a href="players/Lyra_Lickorish.html" class="player-link">Lyra Lickorish</a>
+            <a href="players/MacKenzie_7.html" class="player-link">MacKenzie 7</a>
+            <a href="players/MacKenzie_Hyduk.html" class="player-link">MacKenzie Hyduk</a>
+            <a href="players/Maddy_Moscatel.html" class="player-link">Maddy Moscatel</a>
+            <a href="players/Madison_Davies.html" class="player-link">Madison Davies</a>
+            <a href="players/Madison_Hodenpel.html" class="player-link">Madison Hodenpel</a>
+            <a href="players/Maeve_Hammer.html" class="player-link">Maeve Hammer</a>
+            <a href="players/Maeve_Wenz.html" class="player-link">Maeve Wenz</a>
+            <a href="players/Maggie_Harrington.html" class="player-link">Maggie Harrington</a>
+            <a href="players/Makayla_De_Lisi.html" class="player-link">Makayla De Lisi</a>
+            <a href="players/Manu_Carey.html" class="player-link">Manu Carey</a>
+            <a href="players/Margaux_Bouyon.html" class="player-link">Margaux Bouyon</a>
+            <a href="players/Margot_Thomas.html" class="player-link">Margot Thomas</a>
+            <a href="players/Martin_79.html" class="player-link">Martin 79</a>
+            <a href="players/Mary_Hederman.html" class="player-link">Mary Hederman</a>
+            <a href="players/Mason_Champagne.html" class="player-link">Mason Champagne</a>
+            <a href="players/Mason_Flynn.html" class="player-link">Mason Flynn</a>
+            <a href="players/Mateo_Gonzalez.html" class="player-link">Mateo Gonzalez</a>
+            <a href="players/Matthew_Herlant.html" class="player-link">Matthew Herlant</a>
+            <a href="players/Matthew_Snyder.html" class="player-link">Matthew Snyder</a>
+            <a href="players/Max_Hu.html" class="player-link">Max Hu</a>
+            <a href="players/Mia_Brassell.html" class="player-link">Mia Brassell</a>
+            <a href="players/Mia_Rocchio.html" class="player-link">Mia Rocchio</a>
+            <a href="players/Michael_Ace_Moscatel.html" class="player-link">Michael &quot;Ace&quot; Moscatel</a>
+            <a href="players/Milly_Hartman.html" class="player-link">Milly Hartman</a>
+            <a href="players/Naomi_Furukawa.html" class="player-link">Naomi Furukawa</a>
+            <a href="players/Nathan_Palmteer.html" class="player-link">Nathan Palmteer</a>
+            <a href="players/Neil_Canniff.html" class="player-link">Neil Canniff</a>
+            <a href="players/Nien_Chow.html" class="player-link">Nien Chow</a>
+            <a href="players/Nikita_Brusylov.html" class="player-link">Nikita Brusylov</a>
+            <a href="players/Nina_Simmons.html" class="player-link">Nina Simmons</a>
+            <a href="players/Nolan_Gilman.html" class="player-link">Nolan Gilman</a>
+            <a href="players/Nora_Hurley.html" class="player-link">Nora Hurley</a>
+            <a href="players/Nora_Plamondon.html" class="player-link">Nora Plamondon</a>
+            <a href="players/Odhran_Glynn.html" class="player-link">Odhran Glynn</a>
+            <a href="players/Ollie_Ranta.html" class="player-link">Ollie Ranta</a>
+            <a href="players/Orla_Ryan.html" class="player-link">Orla Ryan</a>
+            <a href="players/Owen_Goettel.html" class="player-link">Owen Goettel</a>
+            <a href="players/Parker_Yoo.html" class="player-link">Parker Yoo</a>
+            <a href="players/Patrick_.html" class="player-link">Patrick #</a>
+            <a href="players/Patrick_Arone.html" class="player-link">Patrick Arone</a>
+            <a href="players/Patrick_Delongchamp.html" class="player-link">Patrick Delongchamp</a>
+            <a href="players/Patrick_Williams.html" class="player-link">Patrick Williams</a>
+            <a href="players/Paxton_Mara.html" class="player-link">Paxton Mara</a>
+            <a href="players/Payton_88.html" class="player-link">Payton 88</a>
+            <a href="players/Payton_Corsino.html" class="player-link">Payton Corsino</a>
+            <a href="players/Peregrin_Kissler.html" class="player-link">Peregrin Kissler</a>
+            <a href="players/Persephone_Wheeler.html" class="player-link">Persephone Wheeler</a>
+            <a href="players/Philip_Fernekees.html" class="player-link">Philip Fernekees</a>
+            <a href="players/Rachel_Choi.html" class="player-link">Rachel Choi</a>
+            <a href="players/Rebecca_88.html" class="player-link">Rebecca 88</a>
+            <a href="players/Rebecca_Sousa.html" class="player-link">Rebecca Sousa</a>
+            <a href="players/Reece_Laws.html" class="player-link">Reece Laws</a>
+            <a href="players/Reese_88.html" class="player-link">Reese 88</a>
+            <a href="players/Remi_Antunes.html" class="player-link">Remi Antunes</a>
+            <a href="players/Remington_Monds.html" class="player-link">Remington Monds</a>
+            <a href="players/Riley_Anderson.html" class="player-link">Riley Anderson</a>
+            <a href="players/Rivaan_Ravindran.html" class="player-link">Rivaan Ravindran</a>
+            <a href="players/Robbie_Hatfield.html" class="player-link">Robbie Hatfield</a>
+            <a href="players/Robbie_LaQuaglia.html" class="player-link">Robbie LaQuaglia</a>
+            <a href="players/Robert_Hatfield.html" class="player-link">Robert Hatfield</a>
+            <a href="players/Robin_Kim.html" class="player-link">Robin Kim</a>
+            <a href="players/Rowan_McSweeney.html" class="player-link">Rowan McSweeney</a>
+            <a href="players/Runtong_Liu.html" class="player-link">Runtong Liu</a>
+            <a href="players/Ryan_20.html" class="player-link">Ryan 20</a>
+            <a href="players/Ryan_37.html" class="player-link">Ryan 37</a>
+            <a href="players/Ryan_Keveny.html" class="player-link">Ryan Keveny</a>
+            <a href="players/Ryder_DeForest.html" class="player-link">Ryder DeForest</a>
+            <a href="players/Saki_Saito.html" class="player-link">Saki Saito</a>
+            <a href="players/Sam_Liebman.html" class="player-link">Sam Liebman</a>
+            <a href="players/Sanjay_Viron.html" class="player-link">Sanjay Viron</a>
+            <a href="players/Scarlett_Sersich.html" class="player-link">Scarlett Sersich</a>
+            <a href="players/Sebastian_46.html" class="player-link">Sebastian 46</a>
+            <a href="players/Sebastian_Chantreau.html" class="player-link">Sebastian Chantreau</a>
+            <a href="players/Serena_33.html" class="player-link">Serena 33</a>
+            <a href="players/Serena_Li.html" class="player-link">Serena Li</a>
+            <a href="players/Shamus_63.html" class="player-link">Shamus 63</a>
+            <a href="players/Shay_Stewart.html" class="player-link">Shay Stewart</a>
+            <a href="players/Siena_Paus.html" class="player-link">Siena Paus</a>
+            <a href="players/Silas_Sinks.html" class="player-link">Silas Sinks</a>
+            <a href="players/Simone_McBride.html" class="player-link">Simone McBride</a>
+            <a href="players/Sloane_15.html" class="player-link">Sloane 15</a>
+            <a href="players/Sloane_Haines.html" class="player-link">Sloane Haines</a>
+            <a href="players/Sosuke_Saito.html" class="player-link">Sosuke Saito</a>
+            <a href="players/Srianiketh_29.html" class="player-link">Srianiketh 29</a>
+            <a href="players/Sylvia_Melendez.html" class="player-link">Sylvia Melendez</a>
+            <a href="players/TJ_Hyduk.html" class="player-link">TJ Hyduk</a>
+            <a href="players/Teagan_9.html" class="player-link">Teagan 9</a>
+            <a href="players/Teagan_Allen.html" class="player-link">Teagan Allen</a>
+            <a href="players/Teddy_Lewis.html" class="player-link">Teddy Lewis</a>
+            <a href="players/Tegan_Baker.html" class="player-link">Tegan Baker</a>
+            <a href="players/Theo_78.html" class="player-link">Theo 78</a>
+            <a href="players/Theo_Abbott.html" class="player-link">Theo Abbott</a>
+            <a href="players/Theodore_Dolan.html" class="player-link">Theodore Dolan</a>
+            <a href="players/Theodore_Hurley.html" class="player-link">Theodore Hurley</a>
+            <a href="players/Thomas_Flynn.html" class="player-link">Thomas Flynn</a>
+            <a href="players/Thomas_Gallagher.html" class="player-link">Thomas Gallagher</a>
+            <a href="players/Thomas_Perrotti.html" class="player-link">Thomas Perrotti</a>
+            <a href="players/Timmy_97.html" class="player-link">Timmy 97</a>
+            <a href="players/Timmy_Haley.html" class="player-link">Timmy Haley</a>
+            <a href="players/Timothee_Chaulet.html" class="player-link">Timothee Chaulet</a>
+            <a href="players/Tobi_Ranta.html" class="player-link">Tobi Ranta</a>
+            <a href="players/Tommy_old_Francis.html" class="player-link">Tommy (old) Francis</a>
+            <a href="players/Tommy_Francis.html" class="player-link">Tommy Francis</a>
+            <a href="players/Torsten_Cohen.html" class="player-link">Torsten Cohen</a>
+            <a href="players/Trip_36.html" class="player-link">Trip 36</a>
+            <a href="players/Tristan_9.html" class="player-link">Tristan 9</a>
+            <a href="players/Veronica_Felton-Quinn.html" class="player-link">Veronica Felton-Quinn</a>
+            <a href="players/Vikram_Viron.html" class="player-link">Vikram Viron</a>
+            <a href="players/Vinnie_Tambasco.html" class="player-link">Vinnie Tambasco</a>
+            <a href="players/Vivian_68.html" class="player-link">Vivian 68</a>
+            <a href="players/Vivian_Bourassa.html" class="player-link">Vivian Bourassa</a>
+            <a href="players/Vivian_Howard.html" class="player-link">Vivian Howard</a>
+            <a href="players/Wesley_Hurd.html" class="player-link">Wesley Hurd</a>
+            <a href="players/Win_Johnson.html" class="player-link">Win Johnson</a>
+            <a href="players/Winnie_Johnson.html" class="player-link">Winnie Johnson</a>
+            <a href="players/Yeshas_Suravajjala.html" class="player-link">Yeshas Suravajjala</a>
+            <a href="players/Yuming_Liu.html" class="player-link">Yuming Liu</a>
+            <a href="players/Zeya_Thomas.html" class="player-link">Zeya Thomas</a>
+            <a href="players/allie_russell.html" class="player-link">allie russell</a>
+            <a href="players/sophie_DelVecchio.html" class="player-link">sophie DelVecchio</a>
+            <a href="players/sriyansh_yarlagadda.html" class="player-link">sriyansh yarlagadda</a>
+        </div>
+        
+        <div class="section-header">
+            <h3>🏒 Teams</h3>
+        </div>
+        <p>Click on any team to see the roster for that season:</p>
+        
+        <div class="team-grid">
+            <a href="teams/7275_2022_2023_SEASON.html" class="team-link">
+                <div class="team-name">Kings</div>
+                <div class="team-season">2022/2023 SEASON</div>
+            </a>
+            <a href="teams/7274_2022_2023_SEASON.html" class="team-link">
+                <div class="team-name">Lightning</div>
+                <div class="team-season">2022/2023 SEASON</div>
+            </a>
+            <a href="teams/7271_2022_2023_SEASON.html" class="team-link">
+                <div class="team-name">Rangers</div>
+                <div class="team-season">2022/2023 SEASON</div>
+            </a>
+            <a href="teams/7273_2022_2023_SEASON.html" class="team-link">
+                <div class="team-name">Red Wings</div>
+                <div class="team-season">2022/2023 SEASON</div>
+            </a>
+            <a href="teams/7276_2022_2023_SEASON.html" class="team-link">
+                <div class="team-name">Stars</div>
+                <div class="team-season">2022/2023 SEASON</div>
+            </a>
+            <a href="teams/18076_2023_2024_SEASON.html" class="team-link">
+                <div class="team-name">U10 Girls</div>
+                <div class="team-season">2023/2024 SEASON</div>
+            </a>
+            <a href="teams/18075_2023_2024_SEASON.html" class="team-link">
+                <div class="team-name">U12 Girls</div>
+                <div class="team-season">2023/2024 SEASON</div>
+            </a>
+            <a href="teams/18074_2023_2024_SEASON.html" class="team-link">
+                <div class="team-name">U14 Girls</div>
+                <div class="team-season">2023/2024 SEASON</div>
+            </a>
+            <a href="teams/114932_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">Bantam AA</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114943_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">Mite A1 (3)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114944_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">Mite A2 (4)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114942_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">Mite AA (2)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114941_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">Mite AAA (1)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114936_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">PeeWee A (3)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114935_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">PeeWee AA (2)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114934_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">PeeWee AAA (1)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114940_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">Squirt  A2 (4)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114938_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">Squirt  AA (2)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114937_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">Squirt  AAA (1)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114939_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">Squirt A1 (3)</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114963_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">U10 A</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114962_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">U10 B</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114961_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">U12  A</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114960_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">U12 B</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/114959_2025_2026_SEASON.html" class="team-link">
+                <div class="team-name">U14A</div>
+                <div class="team-season">2025/2026 SEASON</div>
+            </a>
+            <a href="teams/19121_23_24_Season.html" class="team-link">
+                <div class="team-name">Bruins</div>
+                <div class="team-season">23/24 Season</div>
+            </a>
+            <a href="teams/19119_23_24_Season.html" class="team-link">
+                <div class="team-name">Kings</div>
+                <div class="team-season">23/24 Season</div>
+            </a>
+            <a href="teams/19120_23_24_Season.html" class="team-link">
+                <div class="team-name">Lightning</div>
+                <div class="team-season">23/24 Season</div>
+            </a>
+            <a href="teams/19122_23_24_Season.html" class="team-link">
+                <div class="team-name">Red Wings</div>
+                <div class="team-season">23/24 Season</div>
+            </a>
+            <a href="teams/19123_23_24_Season.html" class="team-link">
+                <div class="team-name">Sharks</div>
+                <div class="team-season">23/24 Season</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
