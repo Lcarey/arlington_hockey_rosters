@@ -30,10 +30,25 @@ def read_all_csvs() -> pd.DataFrame:
     print(f"Found {len(csv_files)} CSV files: {csv_files}")
     
     dataframes = []
+    import re
+    def normalize_season(season_str):
+        # Try to extract two years and format as 'YYYY/YYYY'
+        # Handles formats like '2025/2026 SEASON', '23/24 Season', etc.
+        match = re.search(r'(\d{2,4})[\s/\\-]+(\d{2,4})', season_str)
+        if match:
+            y1, y2 = match.groups()
+            # Expand 2-digit years to 4-digit
+            if len(y1) == 2:
+                y1 = '20' + y1 if int(y1) < 50 else '19' + y1
+            if len(y2) == 2:
+                y2 = '20' + y2 if int(y2) < 50 else '19' + y2
+            return f"{y1}/{y2}"
+        return season_str
+
     for file in csv_files:
         try:
             df = pd.read_csv(file)
-            df['season'] = df['season'].astype(str)
+            df['season'] = df['season'].astype(str).apply(normalize_season)
             dataframes.append(df)
             print(f"Loaded {len(df)} records from {file}")
         except Exception as e:
@@ -45,7 +60,7 @@ def read_all_csvs() -> pd.DataFrame:
     combined_df = pd.concat(dataframes, ignore_index=True)
     print(f"Combined dataset has {len(combined_df)} total records")
     
-    return combined_df
+    return combined_df.drop_duplicates()
 
 
 def create_output_directory() -> Path:
@@ -153,31 +168,21 @@ def generate_css() -> str:
     }
     
     .player-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 10px;
-        margin-top: 20px;
-    }
-    
-    .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 10px;
-        margin-top: 20px;
+        line-height: 1.8;
     }
     
     .player-link {
-        background-color: #e0f2fe;
-        padding: 10px;
-        border-radius: 4px;
-        text-decoration: none;
-        color: #0277bd;
-        border: 1px solid #b3e5fc;
-        transition: background-color 0.2s;
+        color: #0066cc;
+        text-decoration: underline;
+        margin-right: 15px;
+        font-weight: normal;
+        background: none;
+        border: none;
+        padding: 0;
     }
     
     .player-link:hover {
-        background-color: #b3e5fc;
+        color: #004499;
     }
     
     .team-link {
@@ -345,7 +350,13 @@ def generate_home_page(players: List[str], teams: List[Dict], output_dir: Path) 
 def generate_player_page(player_data: Dict, output_dir: Path) -> None:
     """Generate an individual player page."""
     player_name = player_data['player_name']
-    teams = player_data['teams']
+    # Sort teams by season (assumes format 'YYYY/YYYY')
+    def season_key(season):
+        try:
+            return int(season.split('/')[0])
+        except Exception:
+            return season
+    teams = sorted(player_data['teams'], key=lambda t: season_key(t['season']))
     
     # Create safe filename
     safe_filename = player_name.replace(" ", "_").replace("/", "_").replace("\\", "_")
@@ -385,11 +396,12 @@ def generate_player_page(player_data: Dict, output_dir: Path) -> None:
         if team['teammates']:
             teammates_html = '<div class="teammates">'
             for teammate in team['teammates']:
-                teammates_html += f'<div class="teammate">{html.escape(teammate)}</div>'
+                teammate_filename = teammate.replace(" ", "_").replace("/", "_").replace("\\", "_")
+                teammate_filename = "".join(c for c in teammate_filename if c.isalnum() or c in "._-")
+                teammates_html += f'<div class="teammate"><a href="../players/{teammate_filename}.html" class="player-link">{html.escape(teammate)}</a></div>'
             teammates_html += '</div>'
         else:
             teammates_html = '<p><em>No other teammates recorded</em></p>'
-        
         html_content += f"""
         <div class="team-card">
             <div class="team-header">
