@@ -50,7 +50,7 @@ def read_all_csvs() -> pd.DataFrame:
 
 def create_output_directory() -> Path:
     """Create the output directory for HTML files."""
-    output_dir = Path("html_output")
+    output_dir = Path("docs")
     output_dir.mkdir(exist_ok=True)
     return output_dir
 
